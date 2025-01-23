@@ -35,3 +35,21 @@ function atualizarListaAmigos() {
         listaAmigos.appendChild(item); // Adiciona o <li> à lista
     }
 }
+// Função para sortear um amigo 
+function sortearAmigo() {
+    // Verificar se há amigos no array
+    if (amigos.length === 0) {
+        alert('Adicione pelo menos um amigo antes de realizar o sorteio.');
+        return;
+    }
+
+    // Gerar um índice aleatório
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+
+    // Obter o nome do amigo sorteado
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    // Exibir o resultado no elemento de resultado
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li>Amigo sorteado: ${amigoSorteado}</li>`;
+}
